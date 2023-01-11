@@ -69,7 +69,7 @@ export async function DeployResourceGroupScope(azPath: string, resourceGroupName
     core.info("Validating template...")
 
     core.info(`"${azPath}" deployment group validate ${validateParameters} -o json`)
-    core.info(`validateOptions - ${validateOptions}`)
+    core.info(`validateOptions - ${JSON.stringify(validateOptions)}`)
 
     var code = await exec(`"${azPath}" deployment group validate ${validateParameters} -o json`, [], validateOptions);
 
